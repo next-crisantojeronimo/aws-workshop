@@ -17,12 +17,13 @@ func GetConnection() *gorm.DB {
 		os.Getenv("GO_APP_DB_HOST"),
 		os.Getenv("GO_APP_DB_PORT"),
 	)
+	log.Println(dataSource)
 	connection, err := gorm.Open("mysql", dataSource)
 	connection.Exec(fmt.Sprintf("USE `%s`", os.Getenv("GO_APP_DB_SCHEME")))
 	connection.Exec("SET FOREIGN_KEY_CHECKS=0;")
 
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalf("DB Connection error: %s", err)
 	}
 
 	return connection
