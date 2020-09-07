@@ -1,3 +1,4 @@
+# tags-service
 > Tag Microservice written in Go to expose tags operations
 > REST EndPoints exposeds:
 > - GET /blognext/api/v1/posts/{postId}/tags            # List all tag´s post
@@ -5,7 +6,7 @@
 > - GET /blognext/api/v1/posts/{postId}/tags/{tatId}    # Get a tag´s post
 > - DELETE /blognext/api/v1/posts/{postId}/tags/{tatId} # Delete a tag´s post
 
-# PRE-REQUISITES
+## PRE-REQUISITES
 * Go compiler equals or greater than 1.14 version
 * Clone aws-workshop git repository:
     ```bash
@@ -24,7 +25,7 @@
     $ export GO_APP_DB_SCHEME=
     ```
 
-# CREATE PROJECT
+## CREATE PROJECT
 * Create tags-service folder in aws-workshop/backend and move to it
 * Initialize the module:
     ```bash
@@ -59,21 +60,22 @@
 * Create main.go file and write the code to run the app
 
 
-# RUN Microservice
+## RUN Microservice
 #### Compile
     ```bash
-    go build .
+    $ go build -o bin/tags-service.sh .
     ```
 
 #### Run with Go
     ```bash
-    go run .
+    $ go build -o bin/tags-service.sh .
+    $ bin/./tags-service.sh
     ```
 
 #### Run with Container
     ```bash
-    docker build .
-    docker run -d 
+    $ docker build .
+    $ docker run -d 
     ```
 
 
